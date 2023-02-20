@@ -1,5 +1,7 @@
 # Bitbucket PR review message
 
+![icon](assets/images/icon.png)
+
 A chrome extension for bitbucket users to copy links and messages quickly for pull request reviewing.
 
 ## installation
