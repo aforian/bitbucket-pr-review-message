@@ -1,4 +1,4 @@
-# Bitbucket PR review message
+# Bitbucket PR review
 
 ![icon](assets/images/icon.png)
 
