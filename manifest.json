@@ -1,6 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Bitbucket PR review",
+  "author": "Alex Ian",
   "version": "0.0.1",
   "description": "Create PR review message with template",
   "icons": {
@@ -24,7 +25,7 @@
       "js": ["content/content_script.js"],
       "css": ["content/style.css"],
       "matches": [
-        "https://bitbucket.org/*/pull-requests/*"
+        "https://bitbucket.org/*"
       ]
     }
   ]
