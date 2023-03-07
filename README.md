@@ -6,7 +6,7 @@ A chrome extension for bitbucket users to copy links and messages quickly for pu
 
 ## installation
 
-TBD
+[Chrome extension store](https://chrome.google.com/webstore/detail/bitbucket-pr-review/hgjmacckifgnlkmgogjcgenmbmbgmlgm)
 
 ## Usage
 
