@@ -1,4 +1,4 @@
-const defaultReviewTemplate = `Hi Team! Please review my pull request. Thank you! 🙏
+const defaultReviewTemplate = `Hi Team! Change for {PR_HEADER}. Please review my pull request. Thank you! 🙏
 {PR_LINK} | {JIRA_CARD}`;
 
 chrome.runtime.onInstalled.addListener(() => {

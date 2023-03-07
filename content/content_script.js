@@ -1,11 +1,19 @@
 async function copyMessageToClipboard() {
-  const { reviewTemplate } = await chrome.storage.sync.get(['reviewTemplate']);
+  const {
+    reviewTemplate
+  } = await chrome.storage.sync.get(['reviewTemplate']);
   const prLinkSymbol = /{PR_LINK}/;
+  const prHeaderSymbol = /{PR_HEADER}/;
   const jiraLinkSymbol = /{JIRA_CARD}/;
   const jiraLinks = [...document.querySelectorAll('h1 [data-link-key="dvcs-connector-issue-key-linker"]')];
   const jiraLinkPlainText = jiraLinks.map((link) => link.innerHTML).join('|');
   const jiraLinkHtmlText = jiraLinks.map((link) =>
     `<a href="${link.href}">${link.innerHTML}</a>`).join(' | ');
+  const prHeader = document.querySelector('h1').textContent
+    .split(jiraLinks[jiraLinks.length - 1].textContent)
+    .pop()
+    .replace(/^]/, '')
+    .trim();
 
   const clipboardItem = new ClipboardItem({
     "text/plain": new Blob(
@@ -13,8 +21,10 @@ async function copyMessageToClipboard() {
         reviewTemplate
           .replace(prLinkSymbol, 'PR')
           .replace(jiraLinkSymbol, jiraLinkPlainText)
-      ],
-      { type: "text/plain" }
+          .replace(prHeaderSymbol, prHeader)
+      ], {
+        type: "text/plain"
+      }
     ),
     "text/html": new Blob(
       [
@@ -22,15 +32,17 @@ async function copyMessageToClipboard() {
           .replace(/\n/g, '<br>')
           .replace(prLinkSymbol, `<a href="${location.href}">PR</a>`)
           .replace(jiraLinkSymbol, jiraLinkHtmlText)
-      ],
-      { type: "text/html" }
+          .replace(prHeaderSymbol, prHeader)
+      ], {
+        type: "text/html"
+      }
     ),
   });
 
   return navigator.clipboard.write([clipboardItem]);
 }
 
-async function addCopyBtn () {
+async function addCopyBtn() {
   if (!location.href.includes('pull-requests')) {
     return;
   }
