@@ -23,7 +23,11 @@ You can place `{PR_LINK}` in the template to represent the pull request link. It
 
 ### `{JIRA_CARD}`
 
-You can place `{JIRA_CARD}` in the template to represent the pull request link. It will use the Jira card number and link on the pull request header as the linked text and link.
+You can place `{JIRA_CARD}` in the template to represent the Jira card link. It will use the Jira card number and link on the pull request header as the linked text and link.
+
+### `{PR_HEADER}`
+
+You can place `{PR_HEADER}` in the template to represent the pull request header content. It will use the pull request header content and remove the Jira card link content.
 
 *There may be multiple Jira card links.*
 
