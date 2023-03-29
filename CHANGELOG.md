@@ -1,5 +1,11 @@
 # Bitbucket PR review
 
+## v0.1.1 (2022/03/29)
+
+### Fixed
+
+- Fix template reset when updated
+
 ## v0.1.0 (2022/03/08)
 
 ### Added
