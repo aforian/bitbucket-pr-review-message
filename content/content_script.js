@@ -5,6 +5,7 @@ async function copyMessageToClipboard() {
   const prLinkSymbol = /{PR_LINK}/;
   const prHeaderSymbol = /{PR_HEADER}/;
   const jiraLinkSymbol = /{JIRA_CARD}/;
+  const jiraHeaderSymbol = /{JIRA_HEADER}/;
   const jiraLinks = [...document.querySelectorAll('h1 [data-link-key="dvcs-connector-issue-key-linker"]')];
   const jiraLinkPlainText = jiraLinks.map((link) => link.innerHTML).join('|');
   const jiraLinkHtmlText = jiraLinks.map((link) =>
@@ -14,6 +15,7 @@ async function copyMessageToClipboard() {
     .pop()
     .replace(/^]/, '')
     .trim();
+  const jiraHeader = document.querySelector('[data-testid="jira-issues-card-item"] > div')?.textContent ?? '';
 
   const clipboardItem = new ClipboardItem({
     "text/plain": new Blob(
@@ -22,6 +24,7 @@ async function copyMessageToClipboard() {
           .replace(prLinkSymbol, 'PR')
           .replace(jiraLinkSymbol, jiraLinkPlainText)
           .replace(prHeaderSymbol, prHeader)
+          .replace(jiraHeaderSymbol, jiraHeader)
       ], {
         type: "text/plain"
       }
@@ -32,6 +35,7 @@ async function copyMessageToClipboard() {
           .replace(/\n/g, '<br>')
           .replace(prLinkSymbol, `<a href="${location.href}">PR</a>`)
           .replace(jiraLinkSymbol, jiraLinkHtmlText)
+          .replace(jiraHeaderSymbol, jiraHeader)
           .replace(prHeaderSymbol, prHeader)
       ], {
         type: "text/html"
