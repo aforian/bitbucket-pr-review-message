@@ -1,5 +1,12 @@
 # Bitbucket PR review
 
+## v0.2.0 (2022/04/07)
+
+### Added
+
+- Add `{JIRA_HEADER}` usage
+- Add update notice
+
 ## v0.1.1 (2022/03/29)
 
 ### Fixed
