@@ -25,11 +25,15 @@ You can place `{PR_LINK}` in the template to represent the pull request link. It
 
 You can place `{JIRA_CARD}` in the template to represent the Jira card link. It will use the Jira card number and link on the pull request header as the linked text and link.
 
+*There may be multiple Jira card links.*
+
 ### `{PR_HEADER}`
 
-You can place `{PR_HEADER}` in the template to represent the pull request header content. It will use the pull request header content and remove the Jira card link content.
+You can place `{PR_HEADER}` in the template to represent the pull request title content. It will use the pull request title content and remove the Jira card link content.
 
-*There may be multiple Jira card links.*
+### `{JIRA_HEADER}`
+
+You can place `{JIRA_HEADER}` in the template to represent the related Jira card title content. Related Jira card mechanism can be checked [here](https://community.atlassian.com/t5/Jira-questions/What-links-a-JIRA-issue-to-Bitbucket-commits-PRs/qaq-p/629638).
 
 ## License
 
