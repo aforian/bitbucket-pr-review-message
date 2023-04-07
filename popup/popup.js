@@ -1,4 +1,5 @@
 const $templateInput = document.querySelector('#review-template');
+const $versionBlock = document.querySelector('#version');
 
 $templateInput.addEventListener('input', (e) => {
   const { value } = e.currentTarget;
@@ -7,11 +8,15 @@ $templateInput.addEventListener('input', (e) => {
 });
 
 async function fetchData() {
-  let { reviewTemplate } = await chrome.storage.sync.get(['reviewTemplate']);
+  const { reviewTemplate } = await chrome.storage.sync.get(['reviewTemplate']);
+  const currentVersion = chrome.runtime.getManifest().version;
 
+  $versionBlock.textContent = `v${currentVersion}`;
   $templateInput.value = reviewTemplate;
 }
 
 window.onload = () => {
+  chrome.action.setBadgeText({ text: '' });
+
   fetchData();
 }

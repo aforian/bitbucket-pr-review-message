@@ -1,10 +1,10 @@
-const defaultReviewTemplate = `Hi Team! {JIRA_HEADER}. Please review my pull request. Thank you! 🙏
+chrome.runtime.onInstalled.addListener((details) => {
+  if (details.reason == "install") {
+    const defaultReviewTemplate = `Hi Team! {JIRA_HEADER}. Please review my pull request. Thank you! 🙏
 {PR_LINK} | {JIRA_CARD}`;
-
-chrome.runtime.onInstalled.addListener(async () => {
-  const { reviewTemplate } = await chrome.storage.sync.get(['reviewTemplate']);
-
-  if (!reviewTemplate) {
     chrome.storage.sync.set({ reviewTemplate: defaultReviewTemplate });
+  }
+  else if (details.reason == "update") {
+    chrome.action.setBadgeText({ text: 'NEW' });
   }
 });
