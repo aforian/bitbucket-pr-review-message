@@ -1,6 +1,8 @@
 # Bitbucket PR review
 
-![icon](assets/images/icon.png)
+<picture>
+  <img src="https://raw.githubusercontent.com/aforian/bitbucket-pr-review-message/main/assets/images/icon.png" alt="icon" height=128 />
+</picture>
 
 A chrome extension for bitbucket users to copy links and messages quickly for pull request reviewing.
 
