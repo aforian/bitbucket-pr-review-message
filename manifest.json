@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Bitbucket PR review",
   "author": "Alex Ian",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Create PR review message with template",
   "icons": {
     "16": "assets/images/icon-16.png",

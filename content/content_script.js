@@ -11,7 +11,7 @@ async function copyMessageToClipboard() {
   const jiraLinkHtmlText = jiraLinks.map((link) =>
     `<a href="${link.href}">${link.innerHTML}</a>`).join(' | ');
   const prHeader = document.querySelector('h1').textContent
-    .split(jiraLinks[jiraLinks.length - 1].textContent)
+    .split(jiraLinks[jiraLinks.length - 1]?.textContent ?? '')
     .pop()
     .replace(/^]/, '')
     .trim();
