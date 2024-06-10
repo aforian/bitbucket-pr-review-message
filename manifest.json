@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Bitbucket PR review",
   "author": "Alex Ian",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Create PR review message with template",
   "icons": {
     "16": "assets/images/icon-16.png",
@@ -11,9 +11,7 @@
     "128": "assets/images/icon-128.png",
     "400": "assets/images/icon.png"
   },
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
   "action": {
     "default_popup": "popup/index.html"
   },
@@ -24,9 +22,7 @@
     {
       "js": ["content/content_script.js"],
       "css": ["content/style.css"],
-      "matches": [
-        "https://bitbucket.org/*"
-      ]
+      "matches": ["https://bitbucket.org/*"]
     }
   ]
 }

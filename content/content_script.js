@@ -53,7 +53,7 @@ async function addCopyBtn() {
 
   const btnClassName = 'pr-review-message__btn';
   const btnText = '📋 Copy review message';
-  const header1 = document.querySelector('[data-qa="pr-header-page-header-wrapper"] h1');
+  const header1 = document.querySelector('[data-qa="pr-header-page-header-wrapper"] h1') || document.querySelector('[data-testid="pr-header"] h1');
   const currentCopyBtn = document.querySelector(`.${btnClassName}`);
 
   if (header1 && !currentCopyBtn) {
