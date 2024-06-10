@@ -1,5 +1,11 @@
 # Bitbucket PR review
 
+## v1.0.0 (2024/06/10)
+
+### Updated
+
+- Suitable for bitbucket new PR UI/UX
+
 ## v0.2.1 (2023/09/24)
 
 ### Fixed
